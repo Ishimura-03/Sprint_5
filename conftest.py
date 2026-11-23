@@ -15,10 +15,8 @@ def driver():
     chrome_options.add_argument('--disable-dev-shm-usage')
 
     drv = webdriver.Chrome(options=chrome_options)
-    try:
-        yield drv
-    finally:
-        drv.quit()
+    yield drv
+    drv.quit()
 
 
 @pytest.fixture

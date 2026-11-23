@@ -15,7 +15,7 @@ class TestLogout:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.REGISTRATION_BUTTON))
 
         # регистрация пользователя
-        driver.find_element(*Locators.NAME_REGISTRATION_FIELD).send_keys('Anastasiia')
+        driver.find_element(*Locators.NAME_REGISTRATION_FIELD).send_keys('Nikitaa03')
         driver.find_element(*Locators.EMAIL_REGISTRATION_FIELD).send_keys(user.email)
         driver.find_element(*Locators.PWD_REGISTRATION_FIELD).send_keys(user.password)
 
@@ -49,8 +49,7 @@ class TestLogout:
         # клик по кнопке "Выход"
         driver.find_element(*Locators.EXIT_BUTTON).click()
 
-        # ожидание, что выполнился logout
-        WebDriverWait(driver, 15).until(expected_conditions.visibility_of_element_located(Locators.LOGIN_BUTTON))
-
-        # проверка, что выполнился выход и кнопка "Войти" отображается
-        assert driver.find_element(*Locators.LOGIN_BUTTON).is_displayed()
+         # проверка, что выполнился выход и кнопка "Войти" отображается
+        assert WebDriverWait(driver, 15).until(
+            expected_conditions.visibility_of_element_located(Locators.LOGIN_BUTTON)
+        ).is_displayed()
