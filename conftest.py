@@ -17,7 +17,7 @@ def driver():
     drv = webdriver.Chrome(options=chrome_options)
     yield drv
     drv.quit()
-
+    #изменено название файла и метод вызова yield
 
 @pytest.fixture
 def user():

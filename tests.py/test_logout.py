@@ -8,7 +8,6 @@ class TestLogout:
 
     def test_go_to_profile_page(self, driver, user):
 
-        # переход на страницу регистрации пользователя
         driver.get(Links.REGISTRATION_PAGE)
 
         # ожидание загрузки страницы пока не появится кнопка "Зарегистрироваться"
